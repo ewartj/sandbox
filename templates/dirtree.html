@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Select file to analyse</h1>
+<hr>
+<ul>
+{% for item in tree %}
+    <div><p>{{ item }}</p>
+    </div>
+{%- endfor %}
+</ul>
+<h2> Please select file to move:</h2>
+<select name= target method="GET" action="/">
+    {% for item in target %}
+    <option value= "{{item}}" SELECTED>{{item}}</option>"
+    {% endfor %}
+</select>
+<hr>
+<h2> Please select destination folder:</h2>
+<select name= destination method="GET" action="/">
+    {% for item in destination %}
+    <option value= "{{item}}" SELECTED>{{item}}</option>"
+    {% endfor %}
+</select>
+<hr>
+<form action="/forward/" method="post">
+    <button name="forwardBtn" type="submit">Forward</button>
+</form>
+
+{% endblock content %}

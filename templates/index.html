@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="display-4">There are {{ "{:,}".format(count) }} folders.</h1>
+  </div>
+  <p>
+    <table class="table table-striped">
+    <thead>
+    <tr>
+    <th>Full Name</th>
+    <th>Type of Appeal</th>
+    <th>County</th>
+    </tr>
+    </thead>
+    <tbody>
+  {% for u in schools %}
+    <tr>
+    <td><a href="/runs/{{ u.Name }}">{{ u.Name }}</a></td>
+    <td>{{ u.Number}}</td>
+    <td> {{ u.Letter }}</td>
+    </tr>
+  {% endfor %}
+    </tbody>
+    </table>
+  </p>
+  <h1>SQWVD</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock content %}
+

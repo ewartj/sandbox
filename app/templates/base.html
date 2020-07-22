@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sequened run viewer.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Sequened run viewer</a>
+        <div>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('dirtree') }}">List Files</a>
+            <a href="{{ url_for('move_file') }}">Move Files</a>
+        </div>
+      </nav>
+      <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

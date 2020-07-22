@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My incredible web site.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">An incredible site</a>
+      </nav>
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4">There are {{ "{:,}".format(count) }} sequene runs analysed.</h1>
+        </div>
+      </div>
+      <div class="container">
+        <p>
+          <table class="table table-striped">
+          <thead>
+          <tr>
+          <th>Full Name</th>
+          <th>Type of Appeal</th>
+          <th>County</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for u in schools  %}
+          <tr>
+          <td>{{ u.Name }}</td>
+          <td>{{ u.Number}}</td>
+          <td> {{ u.Letter }}</td>
+          </tr>
+          {% endfor %}
+          </tbody>
+          </table>
+          </p>
+      </div>
+    </div>
+    <h2>
+    <form action="button">
+      <button type="submit">Do Not Press!</button>
+    <form>
+  </body>
+</html>

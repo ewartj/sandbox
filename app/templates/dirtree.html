@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Select file to analyse</h1>
+<hr>
+<h2> Please select file to move:</h2>
+<select name= target method="GET" action="/">
+    {% for item in target %}
+    <option value= "{{item}}" SELECTED>{{item}}</option>"
+    {% endfor %}
+</select>
+<hr>
+<h2> Please select destination folder:</h2>
+<select name= destination method="GET" action="/">
+    {% for item in destination %}
+    <option value= "{{item}}" SELECTED>{{item}}</option>"
+    {% endfor %}
+</select>
+
+{% endblock content %}

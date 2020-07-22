@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Select file to move</h1>
+<form action="" method="post" novalidate>
+{{ form.hidden_tag() }}
+    <p>
+        {{ form.target_location.label }}<br>
+        {{ form.target_location }}
+    </p>
+    <p>
+        {{ form.destination_location.label }}<br>
+        {{ form.destination_location }}
+    <p> {{ form.submit() }}</p>
+    </p>
+</form>
+{% endblock %}
