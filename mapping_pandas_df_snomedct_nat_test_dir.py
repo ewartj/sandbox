@@ -25,6 +25,8 @@ print(map_id)
 
 snmd["test_id"] = snmd["origional"].map(map_id)
 
+snmd["clinical_indication_id"] = snmd.test_id.str.rsplit(".").str[0]
+
 print(snmd.head())
 
 snmd.to_csv("test.csv")
